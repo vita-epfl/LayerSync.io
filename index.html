@@ -156,18 +156,21 @@
         <sup>*</sup> Equal Contributors &nbsp;&nbsp; 
       </div>
         
-            <div class="content" style="margin-top: 30px; text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background-color: white;">
-        <h2 class="title is-4" style="text-align: center; margin-bottom: 15px;">Abstract</h2>
-        <p style="font-size: 1.1em; line-height: 1.6;">
-          We propose **LayerSync**, a domain-agnostic approach for improving the generation quality and the training efficiency of diffusion models. Prior studies have highlighted the connection between the quality of generation and the representations learned by diffusion models, showing that external guidance on model intermediate representations accelerates training. We reconceptualize this paradigm by regularizing diffusion models with their own intermediate representations. Building on the observation that representation quality varies across diffusion model layers, we show that the most semantically rich representations can act as an intrinsic guidance for weaker ones, reducing the need for external supervision. Our approach, LayerSync, is a self-sufficient, plug-and-play regularizer term with no overhead on diffusion model training and generalizes beyond the visual domain to other modalities. LayerSync requires no pretrained models nor additional data. We extensively evaluate the method on image generation and demonstrate its applicability to other domains such as audio, video, and motion generation. We show that it consistently improves the generation quality and the training efficiency. For example, we speed up the training of flow-based transformer by over **8.75×** on ImageNet dataset and improved the generation quality by **23.6%**. The code is available at <a href="https://github.com/vita-epfl/LayerSync.git">https://github.com/vita-epfl/LayerSync.git</a>.
-        </p>
-      </div>
-              
       </div>
     </div>
   </div>
 </section>
 
+<section class="section">
+  <div class="container has-text-centered">
+    <h2 class="title is-2">Abstract</h2>
+    <div class="content" style="text-align: justify; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <p class="section-description" style="margin-bottom: 0; font-size: 1.1em; color: #000; font-style: normal; text-align: justify;">
+        We propose **LayerSync**, a domain-agnostic approach for improving the generation quality and the training efficiency of diffusion models. Prior studies have highlighted the connection between the quality of generation and the representations learned by diffusion models, showing that external guidance on model intermediate representations accelerates training. We reconceptualize this paradigm by regularizing diffusion models with their own intermediate representations. Building on the observation that representation quality varies across diffusion model layers, we show that the most semantically rich representations can act as an intrinsic guidance for weaker ones, reducing the need for external supervision. Our approach, LayerSync, is a self-sufficient, plug-and-play regularizer term with no overhead on diffusion model training and generalizes beyond the visual domain to other modalities. LayerSync requires no pretrained models nor additional data. We extensively evaluate the method on image generation and demonstrate its applicability to other domains such as audio, video, and motion generation. We show that it consistently improves the generation quality and the training efficiency. For example, we speed up the training of flow-based transformer by over **8.75×** on ImageNet dataset and improved the generation quality by **23.6%**. The code is available at <a href="https://github.com/vita-epfl/LayerSync.git">https://github.com/vita-epfl/LayerSync.git</a>.
+      </p>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container has-text-centered">
     <h2 class="title is-2">Image Generation</h2>
