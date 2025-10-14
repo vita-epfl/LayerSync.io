@@ -1,191 +1,173 @@
-<!D  <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LayerSync</title>
-  <link href="https://    audio { width: 100%; max-width: 100%; }
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <style>
+      .video-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Four equal columns for videos */
+        gap: 10px; /* Space between items */
+        margin: 20px 0; /* Add vertical spacing between sections */
+        align-items: stretch; /* Ensure items fill the grid cell vertically */
+        justify-items: stretch; /* Ensure items fill the grid cell horizontally */
+      }
+      .video-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align descriptions and videos */
+    }
+
+    .video-description {
+      margin-bottom: 10px;
+      font-weight: bold; /* Make the description stand out */
+    }
+
+    .section-description {
+      margin-bottom: 30px;
+      font-size: 1.2em;
+      color: #555; /* Subtle color to differentiate from headings */
+    }
+      .content {
+      margin-bottom: 20px; /* Add space between sections (subtitles and videos) */
+      }
+      video, img {
+        width: 100%; /* Make both videos and GIFs fill their grid cells */
+        height: 100%; /* Fill the height of the grid cell */
+        border: 1px solid #ccc; /* Optional: Add a border */
+        border-radius: 5px; /* Optional: Add rounded corners */
+        object-fit: cover; /* Ensure content fills the container */
+      }
+     
+      .pseudo-video-container {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Arrange items vertically */
+        justify-content: center; /* Center the videos vertically */
+        align-items: center; /* Center the videos horizontally */
+        gap: 20px; /* Add spacing between videos */
+      }
+      .pseudo-video-container video {
+      width: 100%; /* Each video takes 50% of the row */
+      height: 800; /* Set a large height for the videos */
+      max-height: 100%; /* Prevent overflow */
+      border: 1px solid #ccc; /* Optional: Add a border */
+      border-radius: 5px; /* Optional: Add rounded corners */
+      object-fit: cover; /* Ensures the video content scales nicely */
+      }
+      /* === Image grid (12 images) === */
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 cols × 3 rows = 12 items */
+      gap: 10px;
+      margin: 20px 0;
+    }
+    @media (max-width: 1024px) {
+      .img-grid { grid-template-columns: repeat(3, 1fr); } /* tablet */
+    }
+    @media (max-width: 768px) {
+      .img-grid { grid-template-columns: repeat(2, 1fr); } /* mobile */
+    }
+    /* Override your global "video, img { height:100% }" for images in the grid */
+    .img-grid img {
+      width: 100%;
+      height: auto;           /* keep aspect ratio */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      object-fit: cover;      /* harmless with height:auto; can remove if you prefer */
+    }
+
+    /* === Audio comparison grid (ours vs vanilla) === */
+    /* === 2×3 audio grids === */
+    .audio-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0 28px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .audio-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .audio-grid-3 { grid-template-columns: 1fr; }
+    }
+    .audio-card {
+      padding: 10px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      background: #fafafa;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .audio-epoch {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .row-label {
+      margin: 10px 0 4px;
+      font-weight: 700;
+      text-align: left;
+    }
+    audio { width: 100%; max-width: 100%; }
+
 
     .seed-section{ margin-top:28px; padding-top:8px; border-top:1px solid #eee; }
     .seed-title{ margin:4px 0 10px; text-align:left; }
     .seed-nav .tag{ margin-right:6px; margin-bottom:6px; }
-googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">tml>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LayerS    audio { width: 100%; max-width: 100%; }
+    /* If you don't already have these from before: */
+    .audio-grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:start; }
+    @media (max-width:900px){ .audio-grid-3{ grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:560px){ .audio-grid-3{ grid-template-columns:1fr;} }
+    .audio-card{ padding:10px; border:1px solid #e5e5e5; border-radius:8px; background:#fafafa; display:flex; flex-direction:column; gap:8px; }
+    .audio-epoch{ font-weight:600; margin-bottom:4px; }
+    .row-label{ margin:10px 0 6px; font-weight:700; text-align:left; }
+    audio{ width:100%; max-width:100%; }
 
-    .seed-section{ margin-top:28px; padding-top:8px; border-top:1px solid #eee; }
-    .seed-title{ margin:4px 0 10px; text-align:left; }
-    .seed-nav .tag{ margin-right:6px; margin-bottom:6px; }itle>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <style>
-      /* Video comparison grid - 2 columns */
-      .video-comparison-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-        gap: 20px; /* Space between items */
-        margin: 20px auto;
-        max-width: 1200px;
-        align-items: start;
-      }
-      
-      .video-column-header {
-        padding: 15px;
-        background-color: #f8f9fa;
-        border-radius: 8px;
-        margin-bottom: 10px;
-      }
-      
-      .video-column-header h3 {
-        margin: 0;
-        color: #333;
-      }
-      
-      .video-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: #fff;
-      }
-      
-      .video-item video {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-      }
-      
-      @media (max-width: 768px) {
-        .video-comparison-container {
-          grid-template-columns: 1fr; /* Stack on mobile */
-        }
-      }    .section-description {
-      margin-bottom: 30px;
-      font-size: 1.2em;
-      color: #555; /* Subtle color to differentiate from headings */
-    }
-      .content {
-      margin-bottom: 20px; /* Add space between sections (subtitles and videos) */
-      }
-      video, img {
-        width: 100%; /* Make both videos and GIFs fill their grid cells */
-        height: 100%; /* Fill the height of the grid cell */
-        border: 1px solid #ccc; /* Optional: Add a border */
-        border-radius: 5px; /* Optional: Add rounded corners */
-        object-fit: cover; /* Ensure content fills the container */
-      }
-     
-      .pseudo-video-container {
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Arrange items vertically */
-        justify-content: center; /* Center the videos vertically */
-        align-items: center; /* Center the videos horizontally */
-        gap: 20px; /* Add spacing between videos */
-      }
-      .pseudo-video-container video {
-      width: 100%; /* Each video takes 50% of the row */
-      height: 800; /* Set a large height for the videos */
-      max-height: 100%; /* Prevent overflow */
-      border: 1px solid #ccc; /* Optional: Add a border */
-      border-radius: 5px; /* Optional: Add rounded corners */
-      object-fit: cover; /* Ensures the video content scales nicely */
-      }
-      /* === Image grid (12 images) === */
-    .img-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 cols × 3 rows = 12 items */
-      gap: 10px;
-      margin: 20px 0;
-    }
-    @media (max-width: 1024px) {
-      .img-grid { grid-template-columns: repeat(3, 1fr); } /* tablet */
-    }
-    @media (max-width: 768px) {
-      .img-grid { grid-template-columns: repeat(2, 1fr); } /* mobile */
-    }
-    /* Override your global "video, img { height:100% }" for images in the grid */
-    .img-grid img {
-      width: 100%;
-      height: auto;           /* keep aspect ratio */
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      object-fit: cover;      /* harmless with height:auto; can remove if you prefer */
-    }
-
-    /* === Audio comparison grid (ours vs vanilla) === */
-    /* === 2×3 audio grids === */
-    .audio-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 16px 0 28px;
-      align-items: start;
-    }
-    @media (max-width: 900px) {
-      .audio-grid-3 { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .audio-grid-3 { grid-template-columns: 1fr; }
-    }
-    .audio-card {
-      padding: 10px;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      background: #fafafa;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .audio-epoch {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .row-label {
-      margin: 10px 0 4px;
-      font-weight: 700;
-      text-align: left;
-    }
-    audio { width: 100%; max-width: 100%; }
-
-
-    .seed-section{ margin-top:28px; padding-top:8px; border-top:1px solid #eee; }
-    .seed-title{ margin:4px 0 10px; text-align:left; }
-    .seed-nav .tag{ margin-right:6px; margin-bottom:6px; }</style>
-   
+</style>
+   
 </head>
 <body>
-  <section class="hero title-section" style="background-color: #f0f0f0;">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1">
-             LayerSync: Self-aligning Intermediate Layers
-          </h1>
+  <!-- <div style="background-color: #e6ffe6; padding: 10px; text-align: center; color: green; font-weight: bold;">
+    We recommend using Chrome for the best experience. Videos might not work on Safari.
+  </div> -->
+<section class="hero title-section" style="background-color: #f0f0f0;">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1">
+             LayerSync: Self-aligning Intermediate Layers
+          </h1>
 
-                <div class="author-list" style="margin-top: 20px; font-size: 1.1rem;">
-        Yasaman Haghighi<sup>*</sup>, Bastien Van Delft <sup>*</sup>, Mariam Hassan, Alexandre Alahi
-      </div>
+          <!-- Author List -->
+      <div class="author-list" style="margin-top: 20px; font-size: 1.1rem;">
+        Yasaman Haghighi<sup>*</sup>, Bastien Van Delft <sup>*</sup>, Mariam Hassan, Alexandre Alahi
+      </div>
 
-            <div class="affiliations" style="margin-top: 20px; font-size: 1rem;">
-        École Polytechnique Fédérale de Lausanne (EPFL)
-      </div>
+      <!-- Affiliations -->
+      <div class="affiliations" style="margin-top: 20px; font-size: 1rem;">
+        École Polytechnique Fédérale de Lausanne (EPFL)
+      </div>
 
-            <div class="contribution-legend" style="margin-top: 20px; font-size: 1rem; font-style: italic;">
+      <!-- Contribution Legend -->
+      <div class="contribution-legend" style="margin-top: 20px; font-size: 1rem; font-style: italic;">
         <sup>*</sup> Equal Contributors &nbsp;&nbsp; 
       </div>
-              
+        
       </div>
     </div>
   </div>
 </section>
 
+<!-- Abstract Section -->
 <section class="section">
   <div class="container has-text-centered">
     <h2 class="title is-2">Abstract</h2>
@@ -195,156 +177,149 @@ googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">tml>
   </div>
 </section>
 
+<!-- Other Sections -->
 <section class="section">
   <div class="container has-text-centered">
-    <h2 class="title is-2">Image Generation</h2>      </div>
-    </div>
-  </div>
-</section>
+    <h2 class="title is-2">Image Generation</h2>
+    <p class="section-description">
+      We show examples of our image generation on SIT. 
+    </p>
 
-
-<section class="section">
-  <div class="container has-text-centered">
-    <h2 class="title is-2">Image Generation</h2>
-    <p class="section-description">
-      We show examples of our image generation on SIT. 
-    </p>
-
-    <div class="img-grid">
-            <img src="./static/images/sample_001.png" alt="Generated example 1">
-      <img src="./static/images/sample_004.png" alt="Generated example 2">
-      <img src="./static/images/sample_003.png" alt="Generated example 3">
-      <img src="./static/images/sample_022 copy 2.png" alt="Generated example 4">
-            <img src="./static/images/sample_010.png" alt="Generated example 5">
-      <img src="./static/images/sample_030 copy.png" alt="Generated example 6">
-      <img src="./static/images/sample_002.png" alt="Generated example 7">
-      <img src="./static/images/sample_002 copy.png" alt="Generated example 8">
-            <img src="./static/images/sample_022 copy.png" alt="Generated example 9">
-      <img src="./static/images/sample_031.png" alt="Generated example 10">
-      <img src="./static/images/sample_019.png" alt="Generated example 11">
-      <img src="./static/images/sample_017.png" alt="Generated example 12">
-    </div>
-  </div>
-
-
-
+    <div class="img-grid">
+      <!-- Row 1 -->
+      <img src="./static/images/sample_001.png" alt="Generated example 1">
+      <img src="./static/images/sample_004.png" alt="Generated example 2">
+      <img src="./static/images/sample_003.png" alt="Generated example 3">
+      <img src="./static/images/sample_022 copy 2.png" alt="Generated example 4">
+      <!-- Row 2 -->
+      <img src="./static/images/sample_010.png" alt="Generated example 5">
+      <img src="./static/images/sample_030 copy.png" alt="Generated example 6">
+      <img src="./static/images/sample_002.png" alt="Generated example 7">
+      <img src="./static/images/sample_002 copy.png" alt="Generated example 8">
+      <!-- Row 3 -->
+      <img src="./static/images/sample_022 copy.png" alt="Generated example 9">
+      <img src="./static/images/sample_031.png" alt="Generated example 10">
+      <img src="./static/images/sample_019.png" alt="Generated example 11">
+      <img src="./static/images/sample_017.png" alt="Generated example 12">
+    </div>
+  </div>
 </section>
 
 
 
 <section class="section" id="audio-seeds">
-  <div class="container is-max-desktop audio-narrow has-text-centered">
-    <h2 class="title is-2">Audio Generation</h2>
-    <p class="section-description">
-      We show different audio generations at different seeds and different epochs to compare the evolution of the music being generated.
-    </p>
+  <div class="container is-max-desktop audio-narrow has-text-centered">
+    <h2 class="title is-2">Audio Generation</h2>
+    <p class="section-description">
+      We show different audio generations at different seeds and different epochs to compare the evolution of the music being generated.
+    </p>
 
-    <div class="seed-nav" style="text-align:left;">
-  <span>Seeds:</span>
-  <a href="#seed-1" class="tag is-link is-light">Seed 1</a>
-  <a href="#seed-2" class="tag is-link is-light">Seed 2</a>
-    </div>
+    <div class="seed-nav" style="text-align:left;">
+  <span>Seeds:</span>
+  <a href="#seed-1" class="tag is-link is-light">Seed 1</a>
+  <a href="#seed-2" class="tag is-link is-light">Seed 2</a>
+  <!-- add more as needed -->
+  </div>
 
-        <div id="seed-1" class="seed-section">
-      <h3 class="title is-4 seed-title">Seed 1</h3>
+    <!-- === Seed 1 === -->
+    <div id="seed-1" class="seed-section">
+      <h3 class="title is-4 seed-title">Seed 1</h3>
 
-      <div class="row-label">Baseline</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Vanilla_epoch280.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Vanilla_epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Baseline_epoch650.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
+      <div class="row-label">Baseline</div>
+      <div class="audio-grid-3">
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 280</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/vanilla/Vanilla_epoch280.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 475</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/vanilla/Vanilla_epoch475.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 650</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/vanilla/Baseline_epoch650.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
 
-      <div class="row-label">LayerSync</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch280.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch650.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
+      <div class="row-label">LayerSync</div>
+      <div class="audio-grid-3">
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 280</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/layersync/LayerSync_epoch280.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 475</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/layersync/LayerSync_epoch475.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 650</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed01/layersync/LayerSync_epoch650.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
 
-        <div id="seed-2" class="seed-section">
-      <h3 class="title is-4 seed-title">Seed 2</h3>
+    <!-- === Seed 2 === -->
+    <div id="seed-2" class="seed-section">
+      <h3 class="title is-4 seed-title">Seed 2</h3>
 
-      <div class="row-label">Baseline</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch280.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch650.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
+      <div class="row-label">Baseline</div>
+      <div class="audio-grid-3">
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 280</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/vanilla/epoch280.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 475</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/vanilla/epoch475.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 650</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/vanilla/epoch650.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
 
-      <div class="row-label">LayerSync</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch280.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch650.wav" type="audio/wav">
-          </audio>
-        </div>
-      </div>
-    </div>
+      <div class="row-label">LayerSync</div>
+      <div class="audio-grid-3">
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 280</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/layersync/epoch280.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 475</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/layersync/epoch475.wav" type="audio/wav">
+          </audio>
+        </div>
+        <div class="audio-card">
+          <div class="audio-epoch">Epoch 650</div>
+          <audio controls preload="metadata">
+            <source src="./static/audio/seed02/layersync/epoch650.wav" type="audio/wav">
+          </audio>
+        </div>
+      </div>
+    </div>
 
-  </div>
-
-
-
+  </div>
 </section>
 
 <section class="section">
@@ -354,67 +329,50 @@ googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">tml>
       We show examples of generated videos using LayerSync VS Vanilla Finetuning
     </p>
 
-    <!-- Video comparison grid with 2 columns -->
-    <div class="video-comparison-container">
-      <!-- Headers -->
-      <div class="video-column-header">
-        <h3 class="title is-4">LayerSync</h3>
-      </div>
-      <div class="video-column-header">
-        <h3 class="title is-4">Baseline</h3>
-      </div>
-
-      <!-- Video pair 1 -->
+    <div class="video-container">
       <div class="video-item">
+        <p class="video-description">CogVideo - LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
           <source src="./static/videos/cogvideo_layersync/00008935.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">CogVideo - Baseline</p>
         <video autoplay muted loop playsinline preload="metadata">
           <source src="./static/videos/vanilla/00008935.mp4" type="video/mp4">
         </video>
       </div>
+      
+    </div>
 
-      <!-- Video pair 2 -->
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009346.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009346.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="video-container">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="./static/videos/cogvideo_layersync/00009346.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="./static/videos/vanilla/00009346.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="./static/videos/cogvideo_layersync/00009616.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata">
+            <source src="./static/videos/vanilla/00009616.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="./static/videos/cogvideo_layersync/00009929.mp4" type="video/mp4">
+  </video>
+  <video autoplay muted loop playsinline preload="metadata">
+    <source src="./static/videos/vanilla/00009929.mp4" type="video/mp4">
+</video>
 
-      <!-- Video pair 3 -->
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009616.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009616.mp4" type="video/mp4">
-        </video>
-      </div>
 
-      <!-- Video pair 4 -->
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009929.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="video-item">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009929.mp4" type="video/mp4">
-        </video>
-      </div>
     </div>
   </div>
 </section>
-@@ -366,4 +360,4 @@ <h2 class="title is-2">Video Generation</h2>
+
+
+
+
 
 
 </body>
