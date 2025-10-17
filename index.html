@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LayerSync</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -13,143 +13,144 @@
   <style>
       .video-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Four equal columns for videos */
-        gap: 10px; /* Space between items */
-        margin: 20px 0; /* Add vertical spacing between sections */
-        align-items: stretch; /* Ensure items fill the grid cell vertically */
-        justify-items: stretch; /* Ensure items fill the grid cell horizontally */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin: 3rem 0;
+        align-items: stretch;
       }
+      @media (max-width: 960px) {
+        .video-container {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
       .video-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center align descriptions and videos */
-    }
-
-    .video-description {
-      margin-bottom: 10px;
-      font-weight: bold; /* Make the description stand out */
-    }
-
-    .section-description {
-      margin-bottom: 30px;
-      font-size: 1.2em;
-      color: #555; /* Subtle color to differentiate from headings */
-    }
-      .content {
-      margin-bottom: 20px; /* Add space between sections (subtitles and videos) */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
       }
-      video, img {
-        width: 100%; /* Make both videos and GIFs fill their grid cells */
-        height: 100%; /* Fill the height of the grid cell */
-        border: 1px solid #ccc; /* Optional: Add a border */
-        border-radius: 5px; /* Optional: Add rounded corners */
-        object-fit: cover; /* Ensure content fills the container */
+
+      .video-item video,
+      .video-item img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+        background: rgba(255, 255, 255, 0.7);
+        display: block;
       }
-     
+
+      .video-description {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
       .pseudo-video-container {
-        display: flex; /* Use flexbox for layout */
-        flex-direction: column; /* Arrange items vertically */
-        justify-content: center; /* Center the videos vertically */
-        align-items: center; /* Center the videos horizontally */
-        gap: 20px; /* Add spacing between videos */
+        display: grid;
+        gap: 2rem;
       }
+
       .pseudo-video-container video {
-      width: 100%; /* Each video takes 50% of the row */
-      height: 800; /* Set a large height for the videos */
-      max-height: 100%; /* Prevent overflow */
-      border: 1px solid #ccc; /* Optional: Add a border */
-      border-radius: 5px; /* Optional: Add rounded corners */
-      object-fit: cover; /* Ensures the video content scales nicely */
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        object-fit: cover;
+        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
       }
-      /* === Image grid (12 images) === */
-    .img-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 cols × 3 rows = 12 items */
-      gap: 10px;
-      margin: 20px 0;
-    }
-    @media (max-width: 1024px) {
-      .img-grid { grid-template-columns: repeat(3, 1fr); } /* tablet */
-    }
-    @media (max-width: 768px) {
-      .img-grid { grid-template-columns: repeat(2, 1fr); } /* mobile */
-    }
-    /* Override your global "video, img { height:100% }" for images in the grid */
-    .img-grid img {
-      width: 100%;
-      height: auto;           /* keep aspect ratio */
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      object-fit: cover;      /* harmless with height:auto; can remove if you prefer */
-    }
 
-    /* === Audio comparison grid (ours vs vanilla) === */
-    /* === 2×2 audio grids === */
-    .audio-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin: 16px 0 28px;
-      align-items: start;
-    }
-    @media (max-width: 768px) {
-      .audio-grid-2 { grid-template-columns: 1fr; }
-    }
-    /* === 2×3 audio grids === */
-    .audio-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin: 16px 0 28px;
-      align-items: start;
-    }
-    @media (max-width: 900px) {
-      .audio-grid-3 { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 560px) {
-      .audio-grid-3 { grid-template-columns: 1fr; }
-    }
-    .audio-card {
-      padding: 10px;
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      background: #fafafa;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .audio-epoch {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .row-label {
-      margin: 10px 0 4px;
-      font-weight: 700;
-      text-align: left;
-    }
-    audio { width: 100%; max-width: 100%; }
+      .img-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        margin: 3rem 0;
+      }
+      @media (max-width: 1024px) {
+        .img-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 768px) {
+        .img-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
 
+      .img-grid img {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        object-fit: cover;
+      }
 
-    .seed-section{ margin-top:28px; padding-top:8px; border-top:1px solid #eee; }
-    .seed-title{ margin:4px 0 10px; text-align:left; }
-    .seed-nav .tag{ margin-right:6px; margin-bottom:6px; }
-    /* If you don't already have these from before: */
-    .audio-grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:start; }
-    @media (max-width:900px){ .audio-grid-3{ grid-template-columns:repeat(2,1fr);} }
-    @media (max-width:560px){ .audio-grid-3{ grid-template-columns:1fr;} }
-    .audio-card{ padding:10px; border:1px solid #e5e5e5; border-radius:8px; background:#fafafa; display:flex; flex-direction:column; gap:8px; }
-    .audio-epoch{ font-weight:600; margin-bottom:4px; }
-    .row-label{ margin:10px 0 6px; font-weight:700; text-align:left; }
-    audio{ width:100%; max-width:100%; }
+      .audio-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin: 1.5rem 0 3rem;
+        align-items: start;
+      }
+      @media (max-width: 768px) {
+        .audio-grid-2 {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
 
-</style>
+      .audio-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin: 1.5rem 0 3rem;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .audio-grid-3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 560px) {
+        .audio-grid-3 {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .audio-card {
+        padding: 12px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .audio-epoch {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .row-label {
+        margin: 10px 0 6px;
+        font-weight: 700;
+        text-align: left;
+      }
+      audio {
+        width: 100%;
+        max-width: 100%;
+      }
+  </style>
    
 </head>
 <body>
   <!-- <div style="background-color: #e6ffe6; padding: 10px; text-align: center; color: green; font-weight: bold;">
     We recommend using Chrome for the best experience. Videos might not work on Safari.
   </div> -->
-<section class="hero title-section" style="background-color: #f0f0f0;">
+<section class="hero title-section">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -159,25 +160,25 @@
           </h1>
 
           <!-- Author List -->
-      <div class="author-list" style="margin-top: 20px; font-size: 1.1rem;">
+      <div class="author-list">
         Yasaman Haghighi<sup>*</sup>, Bastien van Delft <sup>*</sup>, Mariam Hassan, Alexandre Alahi
       </div>
 
       <!-- Affiliations -->
-      <div class="affiliations" style="margin-top: 20px; font-size: 1rem;">
-        Swiss Federal Institute of Technology Lausanne (EPFL)
+      <div class="affiliations">
+        Ecole Polytechnique Fédérale de Lausanne (EPFL) 
       </div>
 
       <!-- Contribution Legend -->
-      <div class="contribution-legend" style="margin-top: 20px; font-size: 1rem; font-style: italic;">
+      <div class="contribution-legend">
         <sup>*</sup> Equal Contributors &nbsp;&nbsp; 
       </div>
 
       <!-- Links -->
-      <div class="publication-links" style="margin-top: 30px;">
+      <div class="publication-links">
         <div class="buttons is-centered">
           <!-- Paper Link -->
-          <a class="button is-rounded is-dark" href="https://arxiv.org/abs/2510.12581" style="margin: 5px;">
+          <a class="button is-rounded" href="https://arxiv.org/abs/2510.12581">
             <span class="icon">
               <i class="ai ai-arxiv"></i>
             </span>
@@ -185,21 +186,11 @@
           </a>
           
           <!-- Code Link -->
-          <a class="button is-rounded is-dark" href="https://github.com/vita-epfl/LayerSync.git" style="margin: 5px;">
+          <a class="button is-rounded" href="https://github.com/vita-epfl/LayerSync.git">
             <span class="icon">
               <i class="fab fa-github"></i>
             </span>
             <span>Code</span>
-          </a>
-          
-          <!-- Colab Link -->
-          <a class="button is-rounded is-dark" href="#" style="margin: 5px;">
-            <span class="icon">
-              <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width: 1em; height: 1em; fill: currentColor;">
-                <path d="M16.9414 4.9757a7.033 7.033 0 0 0-4.9308 2.0646 7.033 7.033 0 0 0-.1232 9.8068l2.395-2.395a3.6455 3.6455 0 0 1 5.1497-5.1478l2.397-2.3989a7.033 7.033 0 0 0-4.8877-1.9297zM7.07 4.9855a7.033 7.033 0 0 0-4.8878 1.9316l2.3911 2.3911a3.6434 3.6434 0 0 1 5.0227.1271 3.6434 3.6434 0 0 1 .1271 5.0227l2.3911 2.3911a7.033 7.033 0 0 0 .1271-9.8068 7.033 7.033 0 0 0-5.1493-2.0648zm.0098 12.0098a3.6455 3.6455 0 0 1-2.651-1.0995 3.6455 3.6455 0 0 1-.1271-5.0227L2.0508 8.5338a7.033 7.033 0 0 0-.1271 9.8068 7.033 7.033 0 0 0 9.8068.1271l-2.3911-2.3911a3.6434 3.6434 0 0 1-2.3911-.1271zm9.8068-3.9346l-2.3911 2.3911a3.6455 3.6455 0 0 1-5.1497 5.1497l-2.3911 2.3911a7.033 7.033 0 0 0 9.9387-.1271 7.033 7.033 0 0 0-.0068-9.8068z"/>
-              </svg>
-            </span>
-            <span>Colab</span>
           </a>
         </div>
       </div>
@@ -213,13 +204,22 @@
 <section class="section">
   <div class="container has-text-centered">
     <h2 class="title is-2">Abstract</h2>
-    <p class="section-description" style="text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto;">
-      We propose <strong>LayerSync</strong>, a domain-agnostic approach for improving the generation quality and the training efficiency of diffusion models. Prior studies have highlighted the connection between the quality of generation and the representations learned by diffusion models, showing that external guidance on model intermediate representations accelerates training. We reconceptualize this paradigm by regularizing diffusion models with their own intermediate representations. Building on the observation that representation quality varies across diffusion model layers, we show that the most semantically rich representations can act as an intrinsic guidance for weaker ones, reducing the need for external supervision. Our approach, LayerSync, is a self-sufficient, plug-and-play regularizer term with no overhead on diffusion model training and generalizes beyond the visual domain to other modalities. LayerSync requires no pretrained models nor additional data. We extensively evaluate the method on image generation and demonstrate its applicability to other domains such as audio, video, and motion generation. We show that it consistently improves the generation quality and the training efficiency. For example, we speed up the training of flow-based transformer by over <strong>8.75×</strong> on ImageNet dataset and improved the generation quality by <strong>23.6%</strong>. The code is available at <a href="https://github.com/vita-epfl/LayerSync.git">https://github.com/vita-epfl/LayerSync.git</a>.
+    <p class="section-description">
+      We propose <strong>LayerSync</strong>, a domain-agnostic approach for improving the generation quality and the training efficiency of diffusion models. Prior studies have highlighted the connection between the quality of generation and the representations learned by diffusion models, showing that external guidance on model intermediate representations accelerates training. We reconceptualize this paradigm by regularizing diffusion models with their own intermediate representations. Building on the observation that representation quality varies across diffusion model layers, we show that the most semantically rich representations can act as an intrinsic guidance for weaker ones, reducing the need for external supervision. Our approach, LayerSync, is a self-sufficient, plug-and-play regularizer term with no overhead on diffusion model training and generalizes beyond the visual domain to other modalities. LayerSync requires no pretrained models nor additional data. We extensively evaluate the method on image generation and demonstrate its applicability to other domains such as audio, video, and motion generation. We show that it consistently improves the generation quality and the training efficiency. For example, we speed up the training of flow-based transformer by over <strong>8.75×</strong> on ImageNet dataset and improved the generation quality by <strong>23.6%</strong>.
     </p>
     
     <!-- Figure -->
     <div style="margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
-      <img src="./static/figures/pull_figure.png" alt="LayerSync Overview" style="width: 100%; height: auto; border-radius: 8px;">
+      <figure class="pull-figure">
+        <div class="figure-triptych">
+          <img src="./static/figures/pull-figure.png" alt="LayerSync improvement overview" loading="lazy">
+        </div>
+        <figcaption class="figure-caption">
+          <strong>LayerSync improves training efficiency and generation quality via internal representation alignment.</strong> (a) LayerSync aligns deep and shallow layers. (b) LayerSync achieves over
+          8.75× training acceleration on the ImageNet 256x256. (c) LayerSync consistently improves generation quality across multiple modalities: by 23.6% on FID for images (ImageNet 256×256), 24%
+          on FAD for audio (MTG-Jamendo), and 7.7% for FID on human motion (HumanML3D).
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -229,25 +229,12 @@
   <div class="container has-text-centered">
     <h2 class="title is-2">Image Generation</h2>
     <p class="section-description">
-      We show examples of our image generation on SIT. 
+      <strong>LayerSync improves generation quality without relying on external representation.</strong> We compare the images generated by SiT-XL/2 when regularized with dispersive and LayerSync.
+      All the models are trained on ImageNet 256×256 for 400K iterations, share the same noise, sampler, and number of sampling steps, and none of them use classifier-free guidance.
     </p>
 
-    <div class="img-grid">
-      <!-- Row 1 -->
-      <img src="./static/images/sample_001.png" alt="Generated example 1">
-      <img src="./static/images/sample_004.png" alt="Generated example 2">
-      <img src="./static/images/sample_003.png" alt="Generated example 3">
-      <img src="./static/images/sample_022 copy 2.png" alt="Generated example 4">
-      <!-- Row 2 -->
-      <img src="./static/images/sample_010.png" alt="Generated example 5">
-      <img src="./static/images/sample_030 copy.png" alt="Generated example 6">
-      <img src="./static/images/sample_002.png" alt="Generated example 7">
-      <img src="./static/images/sample_002 copy.png" alt="Generated example 8">
-      <!-- Row 3 -->
-      <img src="./static/images/sample_022 copy.png" alt="Generated example 9">
-      <img src="./static/images/sample_031.png" alt="Generated example 10">
-      <img src="./static/images/sample_019.png" alt="Generated example 11">
-      <img src="./static/images/sample_017.png" alt="Generated example 12">
+    <div class="figure-triptych single">
+      <img src="./static/images/website.png" alt="LayerSync Image Generation Comparison" loading="lazy">
     </div>
   </div>
 </section>
@@ -262,10 +249,9 @@
     <div class="subsection" id="audio-samples">
       <h3 class="title is-3">Audio Samples</h3>
       <p class="section-description">
-        Side-by-side comparison of audio samples generated with Baseline vs LayerSync.
+        Side-by-side comparison of audio samples generated with Baseline vs LayerSync. Both models are trained for the same number of iterations, share the same noise, sampler, and number of sampling steps, and none of them use classifier-free guidance.
       </p>
-
-      <div class="seed-nav" style="text-align:left;">
+      <div class="seed-nav">
         <span>Samples:</span>
         <a href="#sample-01" class="tag is-link is-light">01</a>
         <a href="#sample-02" class="tag is-link is-light">02</a>
@@ -278,11 +264,12 @@
         <a href="#sample-09" class="tag is-link is-light">09</a>
         <a href="#sample-10" class="tag is-link is-light">10</a>
         <a href="#sample-11" class="tag is-link is-light">11</a>
-        <!-- <a href="#sample-12" class="tag is-link is-light">13</a>
-        <a href="#sample-13" class="tag is-link is-light">14</a>
-        <a href="#sample-14" class="tag is-link is-light">15</a>
-        <a href="#sample-15" class="tag is-link is-light">16</a>
-        <a href="#sample-16" class="tag is-link is-light">17</a> -->
+        <!-- <a href="#sample-12" class="tag is-link is-light">12</a>
+        <a href="#sample-13" class="tag is-link is-light">13</a>
+        <a href="#sample-14" class="tag is-link is-light">14</a>
+        <a href="#sample-15" class="tag is-link is-light">15</a>
+        <a href="#sample-16" class="tag is-link is-light">16</a>
+        <a href="#sample-17" class="tag is-link is-light">17</a> -->
       </div>
 
       <!-- Sample 01 -->
@@ -594,18 +581,14 @@
     <div class="subsection" id="evolution-training" style="margin-top: 3rem;">
       <h3 class="title is-3">Evolution over Training</h3>
       <p class="section-description">
-        We show different audio generations at different seeds and different epochs to compare the evolution of the music being generated.
+        The evolution of audio generation over different epoches. 
       </p>
 
-      <div class="seed-nav" style="text-align:left;">
-        <span>Seeds:</span>
-        <a href="#seed-1" class="tag is-link is-light">Seed 1</a>
-        <!-- <a href="#seed-2" class="tag is-link is-light">Seed 2</a> -->
-      </div>
+
 
       <!-- === Seed 1 === -->
       <div id="seed-1" class="seed-section">
-        <h4 class="title is-5 seed-title">Seed 1</h4>
+        <h4 class="title is-5 seed-title"></h4>
 
         <div class="row-label">Baseline</div>
         <div class="audio-grid-3">
@@ -729,26 +712,36 @@
     </div>
 
     <div class="video-container">
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="./static/videos/cogvideo_layersync/00009346.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="./static/videos/vanilla/00009346.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="./static/videos/cogvideo_layersync/00009616.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="metadata">
-            <source src="./static/videos/vanilla/00009616.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="metadata">
-        <source src="./static/videos/cogvideo_layersync/00009929.mp4" type="video/mp4">
-  </video>
-  <video autoplay muted loop playsinline preload="metadata">
-    <source src="./static/videos/vanilla/00009929.mp4" type="video/mp4">
-</video>
-
-
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cogvideo_layersync/00009346.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/vanilla/00009346.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cogvideo_layersync/00009616.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/vanilla/00009616.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cogvideo_layersync/00009929.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/vanilla/00009929.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
 </section>
@@ -757,6 +750,27 @@
 
 
 
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 has-text-centered">Citation</h2>
+    <p class="section-description has-text-centered">
+      If you find LayerSync useful, please cite our work.
+    </p>
+    <pre class="box">
+@misc{haghighi2025layersyncselfaligningintermediatelayers,
+      title={LayerSync: Self-aligning Intermediate Layers},
+      author={Yasaman Haghighi and Bastien van Delft and Mariam Hassan and Alexandre Alahi},
+      year={2025},
+      eprint={2510.12581},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2510.12581},
+}
+    </pre>
+  </div>
+</section>
 
 </body>
 </html>
