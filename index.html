@@ -32,15 +32,15 @@
 
       .video-item video,
       .video-item img {
-        width: 100%;
+        width: 70%;
         height: auto;
-        aspect-ratio: 16 / 9;
         border: 1px solid var(--border);
         border-radius: 16px;
-        object-fit: cover;
+        object-fit: contain;
         box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
         background: rgba(255, 255, 255, 0.7);
         display: block;
+        margin: 0 auto;
       }
 
       .video-description {
@@ -142,6 +142,39 @@
       audio {
         width: 100%;
         max-width: 100%;
+      }
+
+      .motion-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+      @media (max-width: 720px) {
+        .motion-row {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      .motion-label {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .motion-card {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .motion-card video {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        object-fit: contain;
+        box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
+        background: rgba(255, 255, 255, 0.7);
       }
   </style>
    
@@ -688,6 +721,75 @@
   </div>
 </section>
 
+<section class="section" id="motion-generation">
+  <div class="container is-max-desktop has-text-centered">
+    <h2 class="title is-2">Text-Conditioned Human Motion Generation</h2>
+    <p class="section-description">
+      Comparison between LayerSync and vanilla fine-tuning on text-conditioned human motion synthesis.
+    </p>
+
+    <div class="motion-row">
+      <div class="motion-card">
+        <div class="motion-label">MDM</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/vanilla/vanilla_sample00_rep01.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="motion-card">
+        <div class="motion-label">MDM + LayerSync</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/ours/ours_sample00_rep01.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="motion-row">
+      <div class="motion-card">
+        <div class="motion-label">MDM</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/vanilla/vanilla_sample04_rep02.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="motion-card">
+        <div class="motion-label">MDM + LayerSync</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/ours/ours_sample04_rep02.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="motion-row">
+      <div class="motion-card">
+        <div class="motion-label">MDM</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/vanilla/vanilla_sample13_rep00.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="motion-card">
+        <div class="motion-label">MDM + LayerSync</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/ours/ours_sample13_rep00.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="motion-row">
+      <div class="motion-card">
+        <div class="motion-label">MDM</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/vanilla/vanilla_sample28_rep00.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="motion-card">
+        <div class="motion-label">MDM + LayerSync</div>
+        <video controls preload="metadata">
+          <source src="./static/motion/ours/ours_sample28_rep00.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container has-text-centered">
     <h2 class="title is-2">Video Generation</h2>
@@ -697,49 +799,105 @@
 
     <div class="video-container">
       <div class="video-item">
-        <p class="video-description">CogVideo - LayerSync</p>
+        <p class="video-description">Sample 00002433 — MDM</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00008935.mp4" type="video/mp4">
+          <source src="./static/videos/cog/vanilla/00002433.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
-        <p class="video-description">CogVideo - Baseline</p>
+        <p class="video-description">Sample 00002433 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00008935.mp4" type="video/mp4">
+          <source src="./static/videos/cog/ours/00002433.mp4" type="video/mp4">
         </video>
       </div>
-      
     </div>
 
     <div class="video-container">
       <div class="video-item">
+        <p class="video-description">Sample 00004616 — MDM</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009346.mp4" type="video/mp4">
+          <source src="./static/videos/cog/vanilla/00004616.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">Sample 00004616 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009346.mp4" type="video/mp4">
+          <source src="./static/videos/cog/ours/00004616.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-item">
+        <p class="video-description">Sample 00004955 — MDM</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog/vanilla/00004955.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">Sample 00004955 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009616.mp4" type="video/mp4">
+          <source src="./static/videos/cog/ours/00004955.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-item">
+        <p class="video-description">Sample 00009178 — MDM</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog/vanilla/00009178.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">Sample 00009178 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009616.mp4" type="video/mp4">
+          <source src="./static/videos/cog/ours/00009178.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-item">
+        <p class="video-description">CogVideo 00000126 — MDM</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog-vid/vanilla/00000126.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">CogVideo 00000126 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/cogvideo_layersync/00009929.mp4" type="video/mp4">
+          <source src="./static/videos/cog-vid/ours/00000126.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-item">
+        <p class="video-description">CogVideo 00008935 — MDM</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog-vid/vanilla/00008935.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-item">
+        <p class="video-description">CogVideo 00008935 — MDM + LayerSync</p>
         <video autoplay muted loop playsinline preload="metadata">
-          <source src="./static/videos/vanilla/00009929.mp4" type="video/mp4">
+          <source src="./static/videos/cog-vid/ours/00008935.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <div class="video-item">
+        <p class="video-description">CogVideo 00009346 — MDM</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog-vid/vanilla/00009346.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-item">
+        <p class="video-description">CogVideo 00009346 — MDM + LayerSync</p>
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="./static/videos/cog-vid/ours/00009346.mp4" type="video/mp4">
         </video>
       </div>
     </div>
