@@ -91,9 +91,9 @@ li {
 }
 
 .publication-links .button {
-  background: rgba(255, 255, 255, 0.6);
-  color: var(--accent);
-  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.85);
+  color: #f3f4f6;
+  border: 1px solid rgba(15, 23, 42, 0.9);
   padding: 0.85rem 1.8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -102,7 +102,7 @@ li {
 }
 
 .publication-links .button:hover {
-  background: var(--accent);
+  background: rgba(15, 23, 42, 0.9);
   color: #fff;
   border-color: transparent;
 }
