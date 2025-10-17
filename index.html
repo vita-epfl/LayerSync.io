@@ -84,6 +84,17 @@
     }
 
     /* === Audio comparison grid (ours vs vanilla) === */
+    /* === 2×2 audio grids === */
+    .audio-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0 28px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .audio-grid-2 { grid-template-columns: 1fr; }
+    }
     /* === 2×3 audio grids === */
     .audio-grid-3 {
       display: grid;
@@ -276,13 +287,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/02/vanilla/Baseline_0039000_sample_002_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/02/vanilla/Baseline_0039000_sample_019_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/02/layersync/LayerSync_0039000_sample_002_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/02/layersync/LayerSync_0039000_sample_019_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -295,13 +306,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/03/vanilla/Baseline_0039000_sample_003_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/03/vanilla/Baseline_0039000_sample_025_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/03/layersync/LayerSync_0039000_sample_003_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/03/layersync/LayerSync_0039000_sample_025_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -314,13 +325,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/04/vanilla/Baseline_0039000_sample_004_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/04/vanilla/Baseline_0039000_sample_034_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/04/layersync/LayerSync_0039000_sample_004_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/04/layersync/LayerSync_0039000_sample_034_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -333,13 +344,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/05/vanilla/Baseline_0039000_sample_005_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/05/vanilla/Baseline_0039000_sample_037_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/05/layersync/LayerSync_0039000_sample_005_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/05/layersync/LayerSync_0039000_sample_037_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -352,13 +363,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/06/vanilla/Baseline_0039000_sample_006_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/06/vanilla/Baseline_0039000_sample_040_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/06/layersync/LayerSync_0039000_sample_006_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/06/layersync/LayerSync_0039000_sample_040_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -371,13 +382,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/07/vanilla/Baseline_0039000_sample_007_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/07/vanilla/Baseline_0039000_sample_043_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/07/layersync/LayerSync_0039000_sample_007_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/07/layersync/LayerSync_0039000_sample_043_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -390,13 +401,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/08/vanilla/Baseline_0039000_sample_008_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/08/vanilla/Baseline_0039000_sample_047_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/08/layersync/LayerSync_0039000_sample_008_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/08/layersync/LayerSync_0039000_sample_047_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -409,13 +420,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/09/vanilla/Baseline_0039000_sample_009_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/09/vanilla/Baseline_0039000_sample_053_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/09/layersync/LayerSync_0039000_sample_009_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/09/layersync/LayerSync_0039000_sample_053_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -428,13 +439,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/10/vanilla/Baseline_0039000_sample_010_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/10/vanilla/Baseline_0039000_sample_061_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/10/layersync/LayerSync_0039000_sample_010_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/10/layersync/LayerSync_0039000_sample_061_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -447,13 +458,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/11/vanilla/Baseline_0039000_sample_011_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/11/vanilla/Baseline_0039000_sample_063_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/11/layersync/LayerSync_0039000_sample_011_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/11/layersync/LayerSync_0039000_sample_063_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -466,13 +477,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/12/vanilla/Baseline_0039000_sample_012_gpu0_20250925_033649.wav" type="audio/wav">
+              <source src="./static/audio/12/vanilla/Baseline_0039000_sample_072_gpu0_20250925_033649.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/12/layersync/LayerSync_0039000_sample_012_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/12/layersync/LayerSync_0039000_sample_072_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -485,13 +496,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/13/vanilla/LayerSync_0039000_sample_013_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/13/vanilla/LayerSync_0039000_sample_075_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/13/layersync/LayerSync_0039000_sample_013_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/13/layersync/LayerSync_0039000_sample_075_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -504,13 +515,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/14/vanilla/LayerSync_0039000_sample_014_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/14/vanilla/LayerSync_0039000_sample_083_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/14/layersync/LayerSync_0039000_sample_014_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/14/layersync/LayerSync_0039000_sample_083_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -523,13 +534,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/15/vanilla/LayerSync_0039000_sample_015_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/15/vanilla/LayerSync_0039000_sample_084_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/15/layersync/LayerSync_0039000_sample_015_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/15/layersync/LayerSync_0039000_sample_084_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -542,13 +553,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/16/vanilla/LayerSync_0039000_sample_016_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/16/vanilla/LayerSync_0039000_sample_086_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/16/layersync/LayerSync_0039000_sample_016_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/16/layersync/LayerSync_0039000_sample_086_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
@@ -561,13 +572,13 @@
           <div class="audio-card">
             <div class="row-label">Baseline</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/17/vanilla/LayerSync_0039000_sample_017_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/17/vanilla/LayerSync_0039000_sample_099_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
           <div class="audio-card">
             <div class="row-label">LayerSync</div>
             <audio controls preload="metadata">
-              <source src="./static/audio/17/layersync/LayerSync_0039000_sample_017_gpu0_20250925_023600.wav" type="audio/wav">
+              <source src="./static/audio/17/layersync/LayerSync_0039000_sample_099_gpu0_20250925_023600.wav" type="audio/wav">
             </audio>
           </div>
         </div>
