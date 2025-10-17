@@ -241,111 +241,447 @@
 <section class="section" id="audio-seeds">
   <div class="container is-max-desktop audio-narrow has-text-centered">
     <h2 class="title is-2">Audio Generation</h2>
-    <p class="section-description">
-      We show different audio generations at different seeds and different epochs to compare the evolution of the music being generated.
-    </p>
+    
+    <!-- === Audio Samples Subsection === -->
+    <div class="subsection" id="audio-samples">
+      <h3 class="title is-3">Audio Samples</h3>
+      <p class="section-description">
+        Side-by-side comparison of audio samples generated with Baseline vs LayerSync.
+      </p>
 
-    <div class="seed-nav" style="text-align:left;">
-  <span>Seeds:</span>
-  <a href="#seed-1" class="tag is-link is-light">Seed 1</a>
-  <a href="#seed-2" class="tag is-link is-light">Seed 2</a>
-  <!-- add more as needed -->
-  </div>
+      <div class="seed-nav" style="text-align:left;">
+        <span>Samples:</span>
+        <a href="#sample-02" class="tag is-link is-light">02</a>
+        <a href="#sample-03" class="tag is-link is-light">03</a>
+        <a href="#sample-04" class="tag is-link is-light">04</a>
+        <a href="#sample-05" class="tag is-link is-light">05</a>
+        <a href="#sample-06" class="tag is-link is-light">06</a>
+        <a href="#sample-07" class="tag is-link is-light">07</a>
+        <a href="#sample-08" class="tag is-link is-light">08</a>
+        <a href="#sample-09" class="tag is-link is-light">09</a>
+        <a href="#sample-10" class="tag is-link is-light">10</a>
+        <a href="#sample-11" class="tag is-link is-light">11</a>
+        <a href="#sample-12" class="tag is-link is-light">12</a>
+        <a href="#sample-13" class="tag is-link is-light">13</a>
+        <a href="#sample-14" class="tag is-link is-light">14</a>
+        <a href="#sample-15" class="tag is-link is-light">15</a>
+        <a href="#sample-16" class="tag is-link is-light">16</a>
+        <a href="#sample-17" class="tag is-link is-light">17</a>
+      </div>
 
-    <!-- === Seed 1 === -->
-    <div id="seed-1" class="seed-section">
-      <h3 class="title is-4 seed-title">Seed 1</h3>
-
-      <div class="row-label">Baseline</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Vanilla_epoch280.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Vanilla_epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/vanilla/Baseline_epoch650.wav" type="audio/wav">
-          </audio>
+      <!-- Sample 02 -->
+      <div id="sample-02" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 02</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/02/vanilla/Baseline_0039000_sample_002_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/02/layersync/LayerSync_0039000_sample_002_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
       </div>
 
-      <div class="row-label">LayerSync</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch280.wav" type="audio/wav">
-          </audio>
+      <!-- Sample 03 -->
+      <div id="sample-03" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 03</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/03/vanilla/Baseline_0039000_sample_003_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/03/layersync/LayerSync_0039000_sample_003_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch475.wav" type="audio/wav">
-          </audio>
+      </div>
+
+      <!-- Sample 04 -->
+      <div id="sample-04" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 04</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/04/vanilla/Baseline_0039000_sample_004_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/04/layersync/LayerSync_0039000_sample_004_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed01/layersync/LayerSync_epoch650.wav" type="audio/wav">
-          </audio>
+      </div>
+
+      <!-- Sample 05 -->
+      <div id="sample-05" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 05</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/05/vanilla/Baseline_0039000_sample_005_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/05/layersync/LayerSync_0039000_sample_005_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 06 -->
+      <div id="sample-06" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 06</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/06/vanilla/Baseline_0039000_sample_006_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/06/layersync/LayerSync_0039000_sample_006_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 07 -->
+      <div id="sample-07" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 07</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/07/vanilla/Baseline_0039000_sample_007_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/07/layersync/LayerSync_0039000_sample_007_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 08 -->
+      <div id="sample-08" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 08</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/08/vanilla/Baseline_0039000_sample_008_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/08/layersync/LayerSync_0039000_sample_008_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 09 -->
+      <div id="sample-09" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 09</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/09/vanilla/Baseline_0039000_sample_009_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/09/layersync/LayerSync_0039000_sample_009_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 10 -->
+      <div id="sample-10" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 10</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/10/vanilla/Baseline_0039000_sample_010_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/10/layersync/LayerSync_0039000_sample_010_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 11 -->
+      <div id="sample-11" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 11</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/11/vanilla/Baseline_0039000_sample_011_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/11/layersync/LayerSync_0039000_sample_011_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 12 -->
+      <div id="sample-12" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 12</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/12/vanilla/Baseline_0039000_sample_012_gpu0_20250925_033649.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/12/layersync/LayerSync_0039000_sample_012_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 13 -->
+      <div id="sample-13" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 13</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/13/vanilla/LayerSync_0039000_sample_013_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/13/layersync/LayerSync_0039000_sample_013_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 14 -->
+      <div id="sample-14" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 14</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/14/vanilla/LayerSync_0039000_sample_014_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/14/layersync/LayerSync_0039000_sample_014_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 15 -->
+      <div id="sample-15" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 15</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/15/vanilla/LayerSync_0039000_sample_015_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/15/layersync/LayerSync_0039000_sample_015_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 16 -->
+      <div id="sample-16" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 16</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/16/vanilla/LayerSync_0039000_sample_016_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/16/layersync/LayerSync_0039000_sample_016_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample 17 -->
+      <div id="sample-17" class="seed-section">
+        <h4 class="title is-5 seed-title">Sample 17</h4>
+        <div class="audio-grid-2">
+          <div class="audio-card">
+            <div class="row-label">Baseline</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/17/vanilla/LayerSync_0039000_sample_017_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="row-label">LayerSync</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/17/layersync/LayerSync_0039000_sample_017_gpu0_20250925_023600.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Seed 2 === -->
-    <div id="seed-2" class="seed-section">
-      <h3 class="title is-4 seed-title">Seed 2</h3>
+    <!-- === Evolution over Training Subsection === -->
+    <div class="subsection" id="evolution-training" style="margin-top: 3rem;">
+      <h3 class="title is-3">Evolution over Training</h3>
+      <p class="section-description">
+        We show different audio generations at different seeds and different epochs to compare the evolution of the music being generated.
+      </p>
 
-      <div class="row-label">Baseline</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch280.wav" type="audio/wav">
-          </audio>
+      <div class="seed-nav" style="text-align:left;">
+        <span>Seeds:</span>
+        <a href="#seed-1" class="tag is-link is-light">Seed 1</a>
+        <a href="#seed-2" class="tag is-link is-light">Seed 2</a>
+      </div>
+
+      <!-- === Seed 1 === -->
+      <div id="seed-1" class="seed-section">
+        <h4 class="title is-5 seed-title">Seed 1</h4>
+
+        <div class="row-label">Baseline</div>
+        <div class="audio-grid-3">
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 280</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/vanilla/Vanilla_epoch280.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 475</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/vanilla/Vanilla_epoch475.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 650</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/vanilla/Baseline_epoch650.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/vanilla/epoch650.wav" type="audio/wav">
-          </audio>
+
+        <div class="row-label">LayerSync</div>
+        <div class="audio-grid-3">
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 280</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/layersync/LayerSync_epoch280.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 475</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/layersync/LayerSync_epoch475.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 650</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed01/layersync/LayerSync_epoch650.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
       </div>
 
-      <div class="row-label">LayerSync</div>
-      <div class="audio-grid-3">
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 280</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch280.wav" type="audio/wav">
-          </audio>
+      <!-- === Seed 2 === -->
+      <div id="seed-2" class="seed-section">
+        <h4 class="title is-5 seed-title">Seed 2</h4>
+
+        <div class="row-label">Baseline</div>
+        <div class="audio-grid-3">
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 280</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/vanilla/epoch280.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 475</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/vanilla/epoch475.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 650</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/vanilla/epoch650.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 475</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch475.wav" type="audio/wav">
-          </audio>
-        </div>
-        <div class="audio-card">
-          <div class="audio-epoch">Epoch 650</div>
-          <audio controls preload="metadata">
-            <source src="./static/audio/seed02/layersync/epoch650.wav" type="audio/wav">
-          </audio>
+
+        <div class="row-label">LayerSync</div>
+        <div class="audio-grid-3">
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 280</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/layersync/epoch280.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 475</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/layersync/epoch475.wav" type="audio/wav">
+            </audio>
+          </div>
+          <div class="audio-card">
+            <div class="audio-epoch">Epoch 650</div>
+            <audio controls preload="metadata">
+              <source src="./static/audio/seed02/layersync/epoch650.wav" type="audio/wav">
+            </audio>
+          </div>
         </div>
       </div>
     </div>
