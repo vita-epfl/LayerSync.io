@@ -216,6 +216,11 @@
     <p class="section-description" style="text-align: justify; max-width: 900px; margin-left: auto; margin-right: auto;">
       We propose <strong>LayerSync</strong>, a domain-agnostic approach for improving the generation quality and the training efficiency of diffusion models. Prior studies have highlighted the connection between the quality of generation and the representations learned by diffusion models, showing that external guidance on model intermediate representations accelerates training. We reconceptualize this paradigm by regularizing diffusion models with their own intermediate representations. Building on the observation that representation quality varies across diffusion model layers, we show that the most semantically rich representations can act as an intrinsic guidance for weaker ones, reducing the need for external supervision. Our approach, LayerSync, is a self-sufficient, plug-and-play regularizer term with no overhead on diffusion model training and generalizes beyond the visual domain to other modalities. LayerSync requires no pretrained models nor additional data. We extensively evaluate the method on image generation and demonstrate its applicability to other domains such as audio, video, and motion generation. We show that it consistently improves the generation quality and the training efficiency. For example, we speed up the training of flow-based transformer by over <strong>8.75×</strong> on ImageNet dataset and improved the generation quality by <strong>23.6%</strong>. The code is available at <a href="https://github.com/vita-epfl/LayerSync.git">https://github.com/vita-epfl/LayerSync.git</a>.
     </p>
+    
+    <!-- Figure -->
+    <div style="margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+      <img src="./static/figures/pull_figure.png" alt="LayerSync Overview" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
   </div>
 </section>
 
@@ -262,17 +267,17 @@
 
       <div class="seed-nav" style="text-align:left;">
         <span>Samples:</span>
-        <a href="#sample-01" class="tag is-link is-light">02</a>
-        <a href="#sample-02" class="tag is-link is-light">03</a>
-        <a href="#sample-03" class="tag is-link is-light">04</a>
-        <a href="#sample-04" class="tag is-link is-light">05</a>
-        <a href="#sample-05" class="tag is-link is-light">06</a>
-        <a href="#sample-06" class="tag is-link is-light">07</a>
-        <a href="#sample-07" class="tag is-link is-light">08</a>
-        <a href="#sample-08" class="tag is-link is-light">09</a>
-        <a href="#sample-09" class="tag is-link is-light">10</a>
-        <a href="#sample-10" class="tag is-link is-light">11</a>
-        <a href="#sample-11" class="tag is-link is-light">12</a>
+        <a href="#sample-01" class="tag is-link is-light">01</a>
+        <a href="#sample-02" class="tag is-link is-light">02</a>
+        <a href="#sample-03" class="tag is-link is-light">03</a>
+        <a href="#sample-04" class="tag is-link is-light">04</a>
+        <a href="#sample-05" class="tag is-link is-light">05</a>
+        <a href="#sample-06" class="tag is-link is-light">06</a>
+        <a href="#sample-07" class="tag is-link is-light">07</a>
+        <a href="#sample-08" class="tag is-link is-light">08</a>
+        <a href="#sample-09" class="tag is-link is-light">09</a>
+        <a href="#sample-10" class="tag is-link is-light">10</a>
+        <a href="#sample-11" class="tag is-link is-light">11</a>
         <!-- <a href="#sample-12" class="tag is-link is-light">13</a>
         <a href="#sample-13" class="tag is-link is-light">14</a>
         <a href="#sample-14" class="tag is-link is-light">15</a>
